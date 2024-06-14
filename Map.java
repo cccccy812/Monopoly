@@ -29,21 +29,25 @@ public class Map {
           }
         }
     }
-    public String getMap(int graphType,int index,int player1,int player2){
+    public String getMap(int graphType,int index,int player1,int player2,int player3,int player4){
         String graph="";
-        if(player1==index&&player2==index){
+        if(player1==index&&player2==index||player1==index&&player3==index||player1==index&&player4==index||player2==index&&player3==index||player2==index&&player4==index||player3==index&&player4==index){
             graph="|@|";
         }else if(player1==index){
-            graph="|A|";
+            graph="|1|";
         }else if(player2==index){
-            graph="|B|" ;
+            graph="|2|" ;
+        }else if(player3==index){
+          graph="|3|" ;
+        }else if(player4==index){
+          graph="|4|" ;
         }else{
            switch(graphType){
             case 1:
-              graph="|C|";
+              graph="|H|";
               break;
             case 2:
-              graph="|D|";
+              graph="|E|";
               break;
             case 3:
               graph="|L|";
@@ -52,37 +56,44 @@ public class Map {
               graph="|S|";
               break;
             case 5:
-              graph="|1|";
+              graph="|A|";
               break;
             case 6:
-              graph="|2|";
+              graph="|B|";
+              break;
+            case 7:
+              graph="|C|";
+              break;
+            case 8:
+              graph="|D|";
               break;
             default:
               graph="| |";
               break;
            }
-        }
+          }
         return graph;
+          
     }
-    public void printMap(int player1,int player2){
+    public void printMap(int player1,int player2,int player3,int player4){
         for(int i=0;i<15;i++){
-            System.out.print(getMap(map[i],i,player1,player2));
+            System.out.print(getMap(map[i],i,player1,player2,player3,player4));
         }
         System.out.print("\n");
 
        
             for(int i=55,j=15;i>42&&j<28;i--,j++){
-                System.out.print(getMap(map[i],i,player1,player2));
+                System.out.print(getMap(map[i],i,player1,player2,player3,player4));
                 for(int k=0;k<13;k++){
                 System.out.print("   ");
                 }
-                System.out.print(getMap(map[j],j,player1,player2));
+                System.out.print(getMap(map[i],i,player1,player2,player3,player4));
                 System.out.print("\n");
             }
             
         
         for(int i=42;i>27;i--){
-            System.out.print(getMap(map[i],i,player1,player2));
+            System.out.print(getMap(map[i],i,player1,player2,player3,player4));
         }
         System.out.print("\n");
 
