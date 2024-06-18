@@ -92,7 +92,7 @@ public class GameControl {
                 }
             }
             playDays--;
-            System.out.println("遊戲剩下"+playDays+"天");
+            System.out.println("----------遊戲剩下"+playDays+"天----------");
             checkGameOver();
                
 
@@ -276,7 +276,7 @@ public void payPassMoney(int player,int placeOwner){
 }
 public void checkGameOver(){
     if(playDays==0){
-        System.out.println("遊戲天數已到，遊戲結束");
+        System.out.println("----------遊戲天數已到，遊戲結束----------");
         System.out.println("遊戲現金數量結算:");
         int max=0;
                 for(int j=0;j<playerNum;j++){
@@ -306,7 +306,7 @@ public void checkGameOver(){
         for(int i=0;i<playerNum;i++){
             if(players[i].money<=0){
                 gameOver=true;
-                System.out.println(players[i].name+"破產，遊戲結束");
+                System.out.println("----------"+players[i].name+"破產，遊戲結束----------");
             }
         }
     }
