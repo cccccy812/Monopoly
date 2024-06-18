@@ -248,7 +248,7 @@ public void payPassMoney(int player,int placeOwner){
     long passMoney=Math.round(map.placePrice[players[player].position]*0.5);
     String ans="";
     if(player==placeOwner){
-        System.out.println("您到達自己的領地，是否要支付500元升級房屋，過路費將會提升25%");
+        System.out.println("您到達自己的領地，請輸入yes或no決定是否要支付500元升級房屋，過路費將會提升25%");
         while (true) {
             ans=s.next();
             if(ans.equals("yes")){
